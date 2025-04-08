@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Fórum para empreendedores: dúvidas e respostas sobre o mundo comercial" />
+    <meta name="author" content="" />
+    <title>Fórum - NextStage</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/img/logoficial.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logoficial.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">Objetivos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#portfolio">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Sobre Nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#team">Nosso Time</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Contato</a>
+            </li>
+            <!-- Botão para abrir o modal de login -->
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-user"></i> Login
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="username" class="form-label">Usuário</label>
+                <input type="text" class="form-control" id="username" placeholder="Digite seu usuário" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Cabeçalho / Banner do Fórum -->
+    <header class="masthead" style="background: url('assets/img/forum-bg.jpg') no-repeat center center; background-size: cover;">
+      <div class="container">
+        <div class="masthead-subheading">Bem-vindo ao Fórum NextStage!</div>
+        <div class="masthead-heading text-uppercase">Tire suas dúvidas e colabore com a comunidade</div>
+      </div>
+    </header>
+  
+    <!-- Seção de Criação de Pergunta -->
+    <section class="page-section" id="novaPergunta">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Criar Pergunta</h2>
+          <h3 class="section-subheading text-muted">Compartilhe sua dúvida com outros empreendedores</h3>
+        </div>
+        <!-- Formulário para nova pergunta -->
+        <form id="formPergunta">
+          <div class="mb-3">
+            <label for="perguntaTitulo" class="form-label">Título da Pergunta</label>
+            <input type="text" class="form-control" id="perguntaTitulo" placeholder="Escreva um título atrativo" required>
+          </div>
+          <div class="mb-3">
+            <label for="perguntaDescricao" class="form-label">Descrição</label>
+            <textarea class="form-control" id="perguntaDescricao" rows="4" placeholder="Descreva sua dúvida com detalhes" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-xl text-uppercase">Publicar Pergunta</button>
+        </form>
+      </div>
+    </section>
+  
+    <!-- Seção de Listagem de Perguntas -->
+    <section class="page-section bg-light" id="listaPerguntas">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Perguntas Recentes</h2>
+          <h3 class="section-subheading text-muted">Encontre respostas e ajude outros na comunidade</h3>
+        </div>
+        <!-- Container para as perguntas; o conteúdo é gerado via JavaScript -->
+        <div id="perguntasContainer" class="row"></div>
+      </div>
+    </section>
+  
+    <!-- Scripts-->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Importação dos scripts do tema -->
+    <script src="js/scripts.js"></script>
+  
+    <!-- Script customizado para persistência e respostas no fórum -->
+    <script>
+      // Espera o DOM carregar completamente para garantir que os elementos existem
+      document.addEventListener("DOMContentLoaded", function() {
+
+        // Função para salvar as perguntas no localStorage
+        function saveQuestions(questions) {
+          localStorage.setItem("forumQuestions", JSON.stringify(questions));
+        }
+
+        // Função para carregar as perguntas do localStorage
+        function getQuestions() {
+          const data = localStorage.getItem("forumQuestions");
+          return data ? JSON.parse(data) : [];
+        }
+
+        // Função para renderizar as perguntas e suas respostas
+        function loadQuestions() {
+          const questions = getQuestions();
+          const container = document.getElementById("perguntasContainer");
+          container.innerHTML = "";
+
+          questions.forEach((q, index) => {
+            const questionCard = document.createElement("div");
+            questionCard.classList.add("col-lg-4", "col-md-6", "mb-4");
+            // Card da pergunta com botão "Responder"
+            questionCard.innerHTML = `
+              <div class="card h-100" data-index="${index}">
+                <div class="card-body">
+                  <h4 class="card-title">${q.title}</h4>
+                  <p class="card-text">${q.description}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Por: ${q.author}</small>
+                  <button class="btn btn-sm btn-link reply-btn">Responder</button>
+                </div>
+                <div class="card-body reply-container"></div>
+              </div>
+            `;
+
+            // Renderiza respostas se houver
+            if (q.answers && q.answers.length > 0) {
+              const answersHtml = q.answers.map(answer => 
+                `<div class="mb-2 border-top pt-2">
+                   <strong>${answer.author} respondeu:</strong>
+                   <p>${answer.response}</p>
+                 </div>`
+              ).join("");
+              questionCard.querySelector(".reply-container").innerHTML = answersHtml;
+            }
+
+            container.appendChild(questionCard);
+          });
+        }
+
+        // Carrega as perguntas ao iniciar a página
+        loadQuestions();
+
+        // Manipulador do formulário de nova pergunta (salva e re-renderiza)
+        document.getElementById("formPergunta").addEventListener("submit", function(e) {
+          e.preventDefault();
+          const title = document.getElementById("perguntaTitulo").value.trim();
+          const description = document.getElementById("perguntaDescricao").value.trim();
+          if (title === "" || description === "") return;
+
+          // Simula que o autor é "Você". Substitua conforme necessário (ex: do login)
+          const newQuestion = {
+            title: title,
+            description: description,
+            author: "Você",
+            answers: []
+          };
+
+          const questions = getQuestions();
+          questions.push(newQuestion);
+          saveQuestions(questions);
+          loadQuestions();
+
+          // Limpa o formulário
+          document.getElementById("formPergunta").reset();
+        });
+
+        // Delegação de eventos para o botão de "Responder"
+        document.getElementById("perguntasContainer").addEventListener("click", function(e) {
+          if (e.target && e.target.classList.contains("reply-btn")) {
+            const card = e.target.closest(".card");
+            const index = card.getAttribute("data-index");
+            const replyContainer = card.querySelector(".reply-container");
+
+            // Evita criar outro formulário se já estiver aberto
+            if (card.querySelector(".reply-form")) return;
+
+            // Cria o formulário de resposta
+            const replyForm = document.createElement("form");
+            replyForm.classList.add("reply-form", "mt-3");
+            replyForm.innerHTML = `
+              <div class="mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Seu nome" required>
+              </div>
+              <div class="mb-2">
+                <textarea class="form-control form-control-sm" placeholder="Sua resposta" rows="2" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-sm btn-primary">Enviar Resposta</button>
+            `;
+            replyContainer.appendChild(replyForm);
+
+            // Submissão do formulário de resposta
+            replyForm.addEventListener("submit", function(ev) {
+              ev.preventDefault();
+              const inputName = replyForm.querySelector("input").value.trim();
+              const textareaResponse = replyForm.querySelector("textarea").value.trim();
+              if (inputName === "" || textareaResponse === "") return;
+
+              const questions = getQuestions();
+              // Garante que o array de respostas existe
+              if (!questions[index].answers) questions[index].answers = [];
+              // Adiciona a nova resposta
+              questions[index].answers.push({
+                author: inputName,
+                response: textareaResponse
+              });
+              saveQuestions(questions);
+              loadQuestions(); // Re-renderiza os cards
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
